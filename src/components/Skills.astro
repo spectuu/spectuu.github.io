@@ -1,0 +1,68 @@
+---
+  const skillCategories = [
+    {
+      title: "Languages",
+      icon: "💻",
+      skills: ["Java", "C#", "Python", "JavaScript", "TypeScript", "Rust"]
+    },
+    {
+      title: "Backend",
+      icon: "⚙️",
+      skills: ["Spring Boot", ".NET", "Django", "FastAPI", "Node.js", "Discord.js", "JDA"]
+    },
+    {
+      title: "Frontend",
+      icon: "🎨",
+      skills: ["React", "Angular", "Astro", "Tailwind CSS", "HTML5", "CSS3"]
+    },
+    {
+      title: "Databases",
+      icon: "🗄️",
+      skills: ["MongoDB", "MySQL", "MariaDB", "PostgreSQL", "DynamoDB"]
+    },
+    {
+      title: "Cloud & DevOps",
+      icon: "☁️",
+      skills: ["Docker", "AWS", "CloudFlare", "Railway", "Git", "GitHub", "GitLab"]
+    },
+    {
+      title: "Game Dev & AI",
+      icon: "🎮",
+      skills: ["Unity", "C# Scripting", "Claude Code", "Cursor AI"]
+    }
+  ];
+  ---
+
+  <section id="skills" class="py-24 px-6 bg-black">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl font-bold text-center mb-4">
+        <span class="text-red-500">//</span> Skills & Technologies
+      </h2>
+      <div class="w-24 h-1 bg-red-600 mx-auto mb-12"></div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {skillCategories.map((category, index) => (
+          <div
+            class="group p-6 bg-gradient-to-br from-gray-900 to-black rounded-xl border border-red-900/20 hover:border-red-600/50 transition-all
+  duration-300 hover:-translate-y-2"
+            style={`animation-delay: ${index * 100}ms`}
+          >
+            <div class="flex items-center gap-3 mb-4">
+              <span class="text-2xl">{category.icon}</span>
+              <h3 class="text-xl font-semibold text-red-500">{category.title}</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              {category.skills.map(skill => (
+                <span class="px-3 py-1 bg-red-900/20 text-gray-300 rounded-full text-sm border border-red-900/30 group-hover:border-red-600/50
+  transition-colors">
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  ---
